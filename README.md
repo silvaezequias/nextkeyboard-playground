@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NextKeyboard Playground
+
+**NextKeyboard Playground** is an interactive environment for testing and visualizing keyboard events using the **NextKeyboard** library. It features a virtual keyboard that reacts to physical key presses and displays key-specific information.
+
+---
+
+## Features
+
+- **Virtual Keyboard**: A responsive on-screen keyboard synchronized with physical key presses.
+- **Key Information**: Displays detailed information for each key:
+  - `keyValue`
+  - `code` (e.g., "KeyA", "ArrowUp")
+- **Code Examples**: Shows how to use the detected keys in integration scenarios.
+- **Integration Reference**: Provides a direct link to the **NextKeyboard** library repository for further details.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (version 14 or higher)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/silvaezequias/nextkeyboard-playground.git
+   cd nextkeyboard-playground
+   ```
 
-## Learn More
+2. Install the dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   or
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   yarn install
+   ```
 
-## Deploy on Vercel
+3. Start the development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   or
+
+   ```bash
+   yarn dev
+   ```
+
+4. Open the application in your browser:
+   ```
+   http://localhost:3000
+   ```
+
+---
+
+## How It Works
+
+1. Press a key on your physical keyboard, or click a key on the virtual keyboard.
+2. The application will display:
+   - `keyValue`
+   - `code` (event code corresponding to the key pressed).
+   - **Code Examples** showing how to use the key in your project.
+3. Explore the **NextKeyboard** library to integrate advanced keyboard event handling.
+
+For more details on **NextKeyboard**, visit the official repository:  
+[NextKeyboard on GitHub](https://github.com/silvaezequias/nextkeyboard)
+
+---
+
+## Contributing
+
+Contributions are welcome. To propose changes:
+
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/my-feature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add my feature"
+   ```
+4. Push the changes:
+   ```bash
+   git push origin feature/my-feature
+   ```
+5. Open a pull request on GitHub.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
