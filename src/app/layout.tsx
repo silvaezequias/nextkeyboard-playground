@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Virtual Keyboard",
+  title: "NextKeyboard - Playground",
   description: "A customizable virtual keyboard",
 };
 
