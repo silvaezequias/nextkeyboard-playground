@@ -26,14 +26,16 @@ export const VirtualKeyboard: React.FC = () => {
   };
 
   useEffect(() => {
-    const listener = new GlobalKeyboardListener();
-    listener.onKeydown((event, { code }) => {
-      event.preventDefault();
-      handleKeyPress(code);
-    });
-    return () => {
-      listener.cleanup();
-    };
+    if (window !== undefined) {
+      const listener = new GlobalKeyboardListener();
+      listener.onKeydown((event, { code }) => {
+        event.preventDefault();
+        handleKeyPress(code);
+      });
+      return () => {
+        listener.cleanup();
+      };
+    }
   }, []);
 
   const renderKey = (keyData: KeyType) => {
