@@ -180,7 +180,7 @@ export const qwertyLayout: KeyboardLayout = {
         id: "key-numpad-comma",
         keyValue: "NumpadComma",
         label: ".",
-        code: "NumpadDecimal",
+        code: "NumpadComma",
       },
     ],
 

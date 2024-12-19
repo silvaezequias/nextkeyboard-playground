@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { Key } from "./Key";
+import React, { useState, useEffect } from "react";
 import { useKeyboardLayout } from "../hooks/useKeyboardLayout";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { KeyType } from "@/utils/KeyboardLayouts";
 import { GlobalKeyboardListener } from "nextkeyboard";
 
-export const VirtualKeyboard: React.FC = () => {
+export function VirtualKeyboard() {
   const { currentLayout, changeLayout } = useKeyboardLayout();
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
 
@@ -26,16 +26,14 @@ export const VirtualKeyboard: React.FC = () => {
   };
 
   useEffect(() => {
-    if (window !== undefined) {
-      const listener = new GlobalKeyboardListener();
-      listener.onKeydown((event, { code }) => {
-        event.preventDefault();
-        handleKeyPress(code);
-      });
-      return () => {
-        listener.cleanup();
-      };
-    }
+    const listener = new GlobalKeyboardListener();
+    listener.onKeydown((event, { code }) => {
+      event.preventDefault();
+      handleKeyPress(code);
+    });
+    return () => {
+      listener.cleanup();
+    };
   }, []);
 
   const renderKey = (keyData: KeyType) => {
@@ -80,4 +78,4 @@ export const VirtualKeyboard: React.FC = () => {
       </div>
     </div>
   );
-};
+}
