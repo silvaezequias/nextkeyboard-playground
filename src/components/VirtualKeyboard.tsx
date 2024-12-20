@@ -6,6 +6,7 @@ import { useKeyboardLayout } from "../hooks/useKeyboardLayout";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { KeyType } from "@/utils/KeyboardLayouts";
 import { GlobalKeyboardListener } from "nextkeyboard";
+import KeyInfo from "./KeyInfo";
 
 export function VirtualKeyboard() {
   const { currentLayout, changeLayout } = useKeyboardLayout();
@@ -69,13 +70,19 @@ export function VirtualKeyboard() {
         </button>
         <ThemeSwitcher />
       </div>
-      <div className="inline-block border border-border rounded p-2 [&_button]:h-10">
+      <div className="inline-block border border-border rounded p-2 mb-4 [&_button]:h-10">
         {currentLayout.keys.map((row, rowIndex) => (
           <div key={`row-${rowIndex}`} className="flex">
             {row.map(renderKey)}
           </div>
         ))}
       </div>
+      <KeyInfo
+        pressedKeys={Array.from(selectedKeys).map((code) => ({
+          code,
+        }))}
+        lastPressedKey={null}
+      />
     </div>
   );
 }
