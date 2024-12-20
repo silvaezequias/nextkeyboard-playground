@@ -52,10 +52,12 @@ const KeyInfo: React.FC<KeyInfoProps> = ({ pressedKeys, lastPressedKey }) => {
             code={individualKeyUsageCodeTemplate(keysToDisplay)}
           />
 
-          <CodeBlock
-            title={"Sample code for using group key"}
-            code={keyGroupUsageCodeTemplate(keysToDisplay)}
-          />
+          {keysToDisplay.length > 1 && (
+            <CodeBlock
+              title={"Sample code for using group key"}
+              code={keyGroupUsageCodeTemplate(keysToDisplay)}
+            />
+          )}
         </CardContent>
       </Card>
       <Card>
